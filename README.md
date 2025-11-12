@@ -1,1 +1,8 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/IEOUmR9z)
+# TicketFlow UM – Trabajo Final Programación 2 (2025)
+Alumno: Bruno Piastrellini  
+
+Este repositorio contiene los 4 módulos del proyecto:
+- backend/ (Spring Boot)
+- proxy/ (Spring Boot)
+- mobile/ (Kotlin Multiplatform - Android)
+- infra/ (docker-compose)
