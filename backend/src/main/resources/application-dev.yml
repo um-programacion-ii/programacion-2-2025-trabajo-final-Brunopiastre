@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:ticketflowdb;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+# Config de la cátedra para auth y endpoints
+catedra:
+  base-url: http://SERVIDOR:PUERTO
+  endpoints:
+    registrar: /api/v1/agregar_usuario
+    login: /api/v1/authenticate
+  jwt-token: "TOKEN_INTERNO_REEMPLAZAR"
+
+# Config interna backend → proxy
+proxy:
+  base-url: http://localhost:8081
+  internal-token: CHANGEME_INTERNAL
