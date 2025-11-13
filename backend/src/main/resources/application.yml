@@ -1,7 +1,6 @@
 spring:
   application:
     name: ticketflow-backend
-
   profiles:
     active: dev
 

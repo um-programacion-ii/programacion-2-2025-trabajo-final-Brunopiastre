@@ -1,13 +1,13 @@
 spring:
   data:
     redis:
-      host: REDIS_CATEDRA_HOST
+      host: localhost
       port: 6379
+
+backend:
+  base-url: http://localhost:8080
+  internal-token: DEV_INTERNAL
 
 kafka:
   bootstrap-servers: localhost:9092
   topic-eventos: eventos-cambios
-  group-id: ticketflow-brunopiastre
-
-backend:
-  internal-token: CHANGEME_INTERNAL

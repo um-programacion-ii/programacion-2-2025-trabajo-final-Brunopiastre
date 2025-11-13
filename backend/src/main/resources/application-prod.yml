@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://POSTGRES_HOST:5432/ticketflow
-    username: ticketflow_user
-    password: CHANGEME
+    url: jdbc:postgresql://postgres:5432/ticketflow
+    username: ticket_user
+    password: CHANGE_ME
 
   data:
     redis:

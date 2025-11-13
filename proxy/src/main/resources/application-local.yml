@@ -7,7 +7,3 @@ spring:
 backend:
   base-url: http://localhost:8080
   internal-token: LOCAL_INTERNAL
-
-kafka:
-  bootstrap-servers: localhost:9092
-  topic-eventos: eventos-cambios

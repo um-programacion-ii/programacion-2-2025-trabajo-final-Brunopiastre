@@ -4,6 +4,7 @@ spring:
     driver-class-name: org.h2.Driver
     username: sa
     password:
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -14,15 +15,16 @@ spring:
       host: localhost
       port: 6379
 
-# Config de la cátedra para auth y endpoints
+server:
+  port: 8080
+
 catedra:
-  base-url: http://SERVIDOR:PUERTO
+  base-url: http://localhost:8085
+  jwt-token: DEV_TOKEN
   endpoints:
     registrar: /api/v1/agregar_usuario
     login: /api/v1/authenticate
-  jwt-token: "TOKEN_INTERNO_REEMPLAZAR"
 
-# Config interna backend → proxy
 proxy:
   base-url: http://localhost:8081
-  internal-token: CHANGEME_INTERNAL
+  internal-token: DEV_INTERNAL
