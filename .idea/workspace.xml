@@ -7,6 +7,9 @@
     <list default="true" id="6294b786-43c6-4f44-9617-f822b188d454" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.github/.keep" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +61,7 @@
       <option name="presentableId" value="Default" />
       <updated>1762983002747</updated>
       <workItem from="1762983004118" duration="524000" />
-      <workItem from="1762984831898" duration="2068000" />
+      <workItem from="1762984831898" duration="2860000" />
     </task>
     <servers />
   </component>
