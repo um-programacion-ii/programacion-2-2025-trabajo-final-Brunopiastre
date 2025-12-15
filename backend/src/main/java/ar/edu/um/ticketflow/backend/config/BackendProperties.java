@@ -1,9 +1,7 @@
 package ar.edu.um.ticketflow.backend.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 
-@Configuration
 @ConfigurationProperties(prefix = "proxy")
 public class BackendProperties {
     private String baseUrl;

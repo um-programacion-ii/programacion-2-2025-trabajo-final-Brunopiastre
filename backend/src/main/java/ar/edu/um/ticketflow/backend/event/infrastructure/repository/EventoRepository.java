@@ -1,4 +1,4 @@
-package ar.edu.um.ticketflow.backend.repository;
+package ar.edu.um.ticketflow.backend.event.infrastructure.repository;
 
 import ar.edu.um.ticketflow.backend.domain.Evento;
 import org.springframework.data.jpa.repository.JpaRepository;

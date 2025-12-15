@@ -1,9 +1,9 @@
-package ar.edu.um.ticketflow.backend.service;
+package ar.edu.um.ticketflow.backend.event.application.service;
 
 import ar.edu.um.ticketflow.backend.domain.Evento;
-import ar.edu.um.ticketflow.backend.repository.EventoRepository;
+import ar.edu.um.ticketflow.backend.event.infrastructure.repository.EventoRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
