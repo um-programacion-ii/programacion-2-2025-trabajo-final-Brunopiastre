@@ -12,24 +12,27 @@ import java.util.List;
 
 @Component
 public class CatedraClient {
-    private final WebClient webClient;
-    private final CatedraProperties props;
+  private final WebClient webClient;
+  private final CatedraProperties props;
 
-    public CatedraClient(WebClient webClient, CatedraProperties props) {
-        this.webClient = webClient;
-        this.props = props;
-    }
+  public CatedraClient(WebClient webClient, CatedraProperties props) {
+    this.webClient = webClient;
+    this.props = props;
+  }
 
-    public List<CatedraEventoResumenDto> listarEventosResumidos() {
-        String url = props.getBaseUrl() + "/api/endpoints/v1/eventos-resumidos";
-        CatedraEventoResumenDto[] body = webClient
-                .get()
-                .uri(url)
-                .header(HttpHeaders.AUTHORIZATION, "Bearer " + props.getJwtToken())
-                .retrieve()
-                .bodyToMono(CatedraEventoResumenDto[].class)
-                .onErrorResume(ex -> Mono.just(new CatedraEventoResumenDto[0]))
-                .block();
-        return Arrays.asList(body != null ? body : new CatedraEventoResumenDto[0]);
-    }
+  public List<CatedraEventoResumenDto> listarEventosResumidos() {
+    // CORRECCIÓN 1: De getBaseUrl() a getApi().getUrl()
+    String url = props.getApi().getUrl() + "/api/endpoints/v1/eventos-resumidos";
+
+    CatedraEventoResumenDto[] body = webClient
+      .get()
+      .uri(url)
+      // CORRECCIÓN 2: De getJwtToken() a getApi().getToken()
+      .header(HttpHeaders.AUTHORIZATION, "Bearer " + props.getApi().getToken())
+      .retrieve()
+      .bodyToMono(CatedraEventoResumenDto[].class)
+      .onErrorResume(ex -> Mono.just(new CatedraEventoResumenDto[0]))
+      .block();
+    return Arrays.asList(body != null ? body : new CatedraEventoResumenDto[0]);
+  }
 }
