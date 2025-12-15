@@ -10,23 +10,26 @@ import java.util.List;
 @Service
 public class CatedraClientService {
 
-    private final WebClient webClient;
-    private final CatedraProperties props;
+  private final WebClient webClient;
+  private final CatedraProperties props;
 
-    public CatedraClientService(CatedraProperties props) {
-        this.props = props;
-        this.webClient = WebClient.builder()
-                .baseUrl(props.getBaseUrl())
-                .defaultHeader("Authorization", "Bearer " + props.getJwtToken())
-                .build();
-    }
+  public CatedraClientService(CatedraProperties props) {
+    this.props = props;
+    this.webClient = WebClient.builder()
+      // CORRECCIÓN 1: De getBaseUrl() a getApi().getUrl()
+      .baseUrl(props.getApi().getUrl())
+      // CORRECCIÓN 2: De getJwtToken() a getApi().getToken()
+      .defaultHeader("Authorization", "Bearer " + props.getApi().getToken())
+      .build();
+  }
 
-    public List<EventoResumidoDto> obtenerEventosResumidos() {
-        return webClient.get()
-                .uri(props.getEndpoints().getEventosResumidos())
-                .retrieve()
-                .bodyToFlux(EventoResumidoDto.class)
-                .collectList()
-                .block();
-    }
+  public List<EventoResumidoDto> obtenerEventosResumidos() {
+    return webClient.get()
+      // CORRECCIÓN 3: getEventosResumidos() ya es correcto si CatedraProperties.Endpoints fue actualizado
+      .uri(props.getEndpoints().getEventosResumidos())
+      .retrieve()
+      .bodyToFlux(EventoResumidoDto.class)
+      .collectList()
+      .block();
+  }
 }
