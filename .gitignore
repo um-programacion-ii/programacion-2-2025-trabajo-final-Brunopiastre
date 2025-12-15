@@ -1,46 +1,35 @@
 # --- ARCHIVOS Y DIRECTORIOS QUE NO SE DEBEN VERSIONAR ---
-
 # IntelliJ / IDEA
 .idea/
 *.iml
-
 # Archivos compilados
 target/
 out/
-
 # Logs
 *.log
 logs/
-
 # Archivos temporales del SO
 .DS_Store
 Thumbs.db
-
 # Maven
 .mvn/timing.properties
-
 # Archivos de configuración locales
 *.local
 *.env
-
 # Java / Spring cache
 *.class
 *.jar
 *.war
-
 # Kotlin
 *.kotlin_module
-
 # Mobile (Android)
 .gradle/
 build/
 local.properties
-
 # Node (solo si aparece algo futuro)
 node_modules/
-
 # Archivos propios del usuario
 *.swp
 *.swo
-
 status/
+**/target/
