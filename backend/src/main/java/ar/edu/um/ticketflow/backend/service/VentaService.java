@@ -1,5 +1,6 @@
 package ar.edu.um.ticketflow.backend.service;
 
+import ar.edu.um.ticketflow.backend.event.infrastructure.adapter.out.jpa.entity.EventEntity;
 import ar.edu.um.ticketflow.backend.domain.Evento;
 import ar.edu.um.ticketflow.backend.domain.Venta;
 import ar.edu.um.ticketflow.backend.domain.VentaEstado;
@@ -15,35 +16,41 @@ import java.time.LocalDateTime;
 @Transactional
 public class VentaService {
 
-    private final VentaRepository ventaRepository;
+  private final VentaRepository ventaRepository;
 
-    public VentaService(VentaRepository ventaRepository) {
-        this.ventaRepository = ventaRepository;
-    }
+  public VentaService(VentaRepository ventaRepository) {
+    this.ventaRepository = ventaRepository;
+  }
 
-    public Venta crearVentaPendiente(Evento evento, BigDecimal monto) {
-        Venta venta = new Venta(evento, LocalDateTime.now(), VentaEstado.PENDIENTE);
-        venta.setMontoTotal(monto);
-        return ventaRepository.save(venta);
-    }
+  public Venta crearVentaPendiente(Evento evento, BigDecimal monto) {
+    // --- CORRECCIÓN ---
+    // Convertimos el objeto de dominio 'Evento' a una 'EventEntity' (solo el ID es necesario para la relación)
+    EventEntity eventEntity = new EventEntity();
+    eventEntity.setId(evento.getId());
 
-    public Venta agregarItem(Venta venta, Integer fila, Integer columna, String nombrePasajero) {
-        VentaItem item = new VentaItem(fila, columna, nombrePasajero);
-        venta.agregarItem(item);
-        return ventaRepository.save(venta);
-    }
+    // Ahora pasamos eventEntity al constructor
+    Venta venta = new Venta(eventEntity, LocalDateTime.now(), VentaEstado.PENDIENTE);
+    venta.setMontoTotal(monto);
+    return ventaRepository.save(venta);
+  }
 
-    public Venta marcarVentaConfirmada(Venta venta) {
-        venta.setEstado(VentaEstado.CONFIRMADA);
-        return ventaRepository.save(venta);
-    }
+  public Venta agregarItem(Venta venta, Integer fila, Integer columna, String nombrePasajero) {
+    VentaItem item = new VentaItem(fila, columna, nombrePasajero);
+    venta.agregarItem(item);
+    return ventaRepository.save(venta);
+  }
 
-    public Venta marcarVentaFallida(Venta venta) {
-        venta.setEstado(VentaEstado.FALLIDA);
-        return ventaRepository.save(venta);
-    }
+  public Venta marcarVentaConfirmada(Venta venta) {
+    venta.setEstado(VentaEstado.CONFIRMADA);
+    return ventaRepository.save(venta);
+  }
 
-    public Venta guardar(Venta venta) {
-        return ventaRepository.save(venta);
-    }
+  public Venta marcarVentaFallida(Venta venta) {
+    venta.setEstado(VentaEstado.FALLIDA);
+    return ventaRepository.save(venta);
+  }
+
+  public Venta guardar(Venta venta) {
+    return ventaRepository.save(venta);
+  }
 }
