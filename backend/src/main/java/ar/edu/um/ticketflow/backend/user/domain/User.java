@@ -1,51 +1,79 @@
-package ar.edu.um.ticketflow.backend.user.domain;
+package ar.edu.um.ticketflow.backend.user.domain.user;
 
+import ar.edu.um.ticketflow.backend.user.domain.UserRole;
+import jakarta.persistence.*;
+
+@Entity // <--- ESTO convierte la clase en tabla
+@Table(name = "users") // La tabla se llamará 'users' en MySQL
 public class User {
 
-    private Long id;
-    private String email;
-    private String fullName;
-    private String role;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    public User() {
-    }
+  @Column(unique = true, nullable = false)
+  private String email;
 
-    public User(Long id, String email, String fullName, String role) {
-        this.id = id;
-        this.email = email;
-        this.fullName = fullName;
-        this.role = role;
-    }
+  @Column(nullable = false) // <--- Agregamos esto obligatorio
+  private String password;
 
-    public Long getId() {
-        return id;
-    }
+  private String fullName;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  @Enumerated(EnumType.STRING) // Guardará "ADMIN" o "USER" como texto
+  private UserRole role;       // Usamos tu Enum 'UserRole' en vez de String suelto
 
-    public String getEmail() {
-        return email;
-    }
+  // --- CONSTRUCTORES ---
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+  public User() {
+  }
 
-    public String getFullName() {
-        return fullName;
-    }
+  public User(Long id, String email, String password, String fullName, UserRole role) {
+    this.id = id;
+    this.email = email;
+    this.password = password;
+    this.fullName = fullName;
+    this.role = role;
+  }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
+  // --- GETTERS Y SETTERS ---
 
-    public String getRole() {
-        return role;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    public void setRole(String role) {
-        this.role = role;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public String getPassword() { // <--- Nuevo Getter
+    return password;
+  }
+
+  public void setPassword(String password) { // <--- Nuevo Setter
+    this.password = password;
+  }
+
+  public String getFullName() {
+    return fullName;
+  }
+
+  public void setFullName(String fullName) {
+    this.fullName = fullName;
+  }
+
+  public UserRole getRole() {
+    return role;
+  }
+
+  public void setRole(UserRole role) {
+    this.role = role;
+  }
 }

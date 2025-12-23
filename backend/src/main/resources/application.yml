@@ -2,6 +2,11 @@ spring:
   application:
     name: backend
 
+# El Backend le pide todo al Proxy (puerto 8082 por ejemplo)
+proxy:
+  url: "http://localhost:8081/proxy"
+
+# NO pongas la URL de la cátedra ni el Token aquí.
 catedra:
-  url: http://192.168.194.250:8080
-  token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJicnVubyIsImV4cCI6MTc2ODA3NjMyNSwiYXV0aCI6IlJPTEVfVVNFUiIsImlhdCI6MTc2NTQ4NDMyNX0.fbkGBiTrjYGexPHotrbAZHo7SW1aZ5M1BnusWod8jcA3SS4NqbIuRFpcdD7nqXx72QKoMtd1-BGR2KoR5LSeyQ
+  url: ${CATEDRA_URL:}
+  token: ${CATEDRA_TOKEN:}
