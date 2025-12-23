@@ -1,0 +1,13 @@
+spring:
+  data:
+    redis:
+      host: REDIS_CATEDRA_HOST
+      port: 6379
+
+kafka:
+  bootstrap-servers: localhost:9092
+  topic-eventos: eventos-cambios
+  group-id: ticketflow-brunopiastre
+
+backend:
+  internal-token: CHANGEME_INTERNAL
