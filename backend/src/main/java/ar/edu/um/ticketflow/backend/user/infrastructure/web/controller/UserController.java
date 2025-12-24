@@ -2,51 +2,69 @@ package ar.edu.um.ticketflow.backend.user.infrastructure.web.controller;
 
 import ar.edu.um.ticketflow.backend.user.application.service.UserService;
 import ar.edu.um.ticketflow.backend.user.domain.User;
+import ar.edu.um.ticketflow.backend.user.domain.UserRole;
+import ar.edu.um.ticketflow.backend.user.domain.UserStatus;
 import ar.edu.um.ticketflow.backend.user.infrastructure.web.dto.UserDetailDto;
 import ar.edu.um.ticketflow.backend.user.infrastructure.web.dto.UserRegistrationDto;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api/users") // Prefijo global
 public class UserController {
 
-    private final UserService userService;
+  private final UserService userService;
 
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+  public UserController(UserService userService) {
+    this.userService = userService;
+  }
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public UserDetailDto register(@RequestBody UserRegistrationDto request) {
-        User user = new User(
-                null,
-                request.getEmail(),
-                request.getFullName(),
-                request.getRole()
-        );
-        User created = userService.register(user);
-        return toDto(created);
-    }
+  // --- MODIFICACIÓN AQUÍ ---
+  // Antes: @PostMapping
+  // Ahora: @PostMapping("/register")
+  // URL Final: POST http://localhost:8080/api/users/register
+  @PostMapping("/register")
+  public ResponseEntity<UserDetailDto> register(@RequestBody UserRegistrationDto registrationDto) {
 
-    @GetMapping
-    public List<UserDetailDto> getAll() {
-        return userService.findAll()
-                .stream()
-                .map(this::toDto)
-                .collect(Collectors.toList());
-    }
+    User newUser = new User(
+      null,
+      registrationDto.getEmail(),
+      registrationDto.getPassword(),
+      registrationDto.getFullName(),
+      UserRole.ROLE_USER,
+      UserStatus.ACTIVE
+    );
 
-    private UserDetailDto toDto(User user) {
-        return new UserDetailDto(
-                user.getId(),
-                user.getEmail(),
-                user.getFullName(),
-                user.getRole()
-        );
+    User createdUser = userService.createUser(newUser);
+
+    UserDetailDto detailDto = new UserDetailDto(
+      createdUser.getId(),
+      createdUser.getEmail(),
+      createdUser.getFullName(),
+      createdUser.getRole().name()
+    );
+
+    return new ResponseEntity<>(detailDto, HttpStatus.CREATED);
+  }
+
+  @GetMapping("/{id}")
+  public ResponseEntity<UserDetailDto> getUser(@PathVariable("id") Long id) {
+    Optional<User> userOptional = userService.getUserById(id);
+
+    if (userOptional.isPresent()) {
+      User user = userOptional.get();
+      UserDetailDto dto = new UserDetailDto(
+        user.getId(),
+        user.getEmail(),
+        user.getFullName(),
+        user.getRole().name()
+      );
+      return ResponseEntity.ok(dto);
+    } else {
+      return ResponseEntity.notFound().build();
     }
+  }
 }

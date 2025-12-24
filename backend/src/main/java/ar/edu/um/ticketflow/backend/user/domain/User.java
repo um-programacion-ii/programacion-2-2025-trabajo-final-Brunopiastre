@@ -1,10 +1,9 @@
-package ar.edu.um.ticketflow.backend.user.domain.user;
+package ar.edu.um.ticketflow.backend.user.domain;
 
-import ar.edu.um.ticketflow.backend.user.domain.UserRole;
 import jakarta.persistence.*;
 
-@Entity // <--- ESTO convierte la clase en tabla
-@Table(name = "users") // La tabla se llamará 'users' en MySQL
+@Entity
+@Table(name = "users")
 public class User {
 
   @Id
@@ -14,25 +13,29 @@ public class User {
   @Column(unique = true, nullable = false)
   private String email;
 
-  @Column(nullable = false) // <--- Agregamos esto obligatorio
+  @Column(nullable = false)
   private String password;
 
   private String fullName;
 
-  @Enumerated(EnumType.STRING) // Guardará "ADMIN" o "USER" como texto
-  private UserRole role;       // Usamos tu Enum 'UserRole' en vez de String suelto
+  @Enumerated(EnumType.STRING)
+  private UserRole role;
+
+  @Enumerated(EnumType.STRING) // <--- Agregamos esto
+  private UserStatus status;   // <--- Agregamos esto
 
   // --- CONSTRUCTORES ---
 
   public User() {
   }
 
-  public User(Long id, String email, String password, String fullName, UserRole role) {
+  public User(Long id, String email, String password, String fullName, UserRole role, UserStatus status) {
     this.id = id;
     this.email = email;
     this.password = password;
     this.fullName = fullName;
     this.role = role;
+    this.status = status;
   }
 
   // --- GETTERS Y SETTERS ---
@@ -53,11 +56,11 @@ public class User {
     this.email = email;
   }
 
-  public String getPassword() { // <--- Nuevo Getter
+  public String getPassword() {
     return password;
   }
 
-  public void setPassword(String password) { // <--- Nuevo Setter
+  public void setPassword(String password) {
     this.password = password;
   }
 
@@ -75,5 +78,13 @@ public class User {
 
   public void setRole(UserRole role) {
     this.role = role;
+  }
+
+  public UserStatus getStatus() { // <--- Getter nuevo
+    return status;
+  }
+
+  public void setStatus(UserStatus status) { // <--- Setter nuevo
+    this.status = status;
   }
 }

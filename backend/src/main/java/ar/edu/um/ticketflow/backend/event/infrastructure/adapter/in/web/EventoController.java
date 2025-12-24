@@ -1,31 +1,39 @@
 package ar.edu.um.ticketflow.backend.event.infrastructure.adapter.in.web;
 
-import ar.edu.um.ticketflow.backend.application.usecase.EventoUseCaseService;
-import ar.edu.um.ticketflow.backend.domain.Evento;
+import ar.edu.um.ticketflow.backend.event.application.service.EventoService;
+import ar.edu.um.ticketflow.backend.event.infrastructure.adapter.out.jpa.entity.EventEntity;
+import ar.edu.um.ticketflow.backend.event.infrastructure.adapter.out.web.dto.SeatDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/eventos")
+@RequestMapping("/api/events") // Mantenemos tu ruta en inglés
 public class EventoController {
 
-  private final EventoUseCaseService eventoService;
+  private final EventoService eventoService;
 
-  public EventoController(EventoUseCaseService eventoService) {
+  public EventoController(EventoService eventoService) {
     this.eventoService = eventoService;
   }
 
   @GetMapping
-  public ResponseEntity<List<Evento>> listarEventos() {
-    // Llama a tu servicio, que llama al puerto, que llama al adaptador, que busca en la BD
-    return ResponseEntity.ok(eventoService.listarTodos());
+  public ResponseEntity<List<EventEntity>> getAllEvents() {
+    return ResponseEntity.ok(eventoService.getAllEvents());
   }
 
-  @PostMapping
-  public ResponseEntity<Evento> crearEvento(@RequestBody Evento evento) {
-    // Llama a tu servicio para guardar
-    return ResponseEntity.ok(eventoService.guardar(evento));
+  @GetMapping("/{id}")
+  public ResponseEntity<EventEntity> getEventById(@PathVariable Long id) {
+    return eventoService.getEventById(id)
+      .map(ResponseEntity::ok)
+      .orElse(ResponseEntity.notFound().build());
+  }
+
+  @GetMapping("/{id}/seats")
+  public ResponseEntity<List<SeatDto>> getSeats(@PathVariable Long id) {
+    // Nota: Confirma que tu servicio tenga este método 'getSeatsForEvent'
+    // Si te da error, cámbialo por 'getSeats(id)' según como lo tengas en el Service
+    return ResponseEntity.ok(eventoService.getSeatsForEvent(id));
   }
 }
