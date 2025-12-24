@@ -12,15 +12,15 @@ public class AuthService {
     this.props = props;
   }
 
-  public String getLoginUrl() {
-    // Usamos props.getUrl() directamente
-    return props.getUrl() + "/login";
+  // --- MÉTODOS QUE FALTABAN ---
+
+  // El Scheduler llama a esto para saber a dónde conectarse
+  public String getUrl() {
+    return props.getUrl();
   }
 
+  // El Scheduler llama a esto para obtener el token del application.properties
   public String getToken() {
-    // Usamos props.getToken() directamente
     return props.getToken();
   }
-
-  // Si tenías otros métodos, asegúrate de usar props.getUrl() en vez de props.getApi().getUrl()
 }

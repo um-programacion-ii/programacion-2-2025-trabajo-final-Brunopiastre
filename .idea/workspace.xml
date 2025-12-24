@@ -1,23 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
+    <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6294b786-43c6-4f44-9617-f822b188d454" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/BackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/BackendApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/application/usecase/EventoUseCaseService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/application/usecase/VentaUseCaseService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/asientos/AsientoBloqueado.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/asientos/BloqueoAsientosService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/auth/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/auth/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/compra/CompraController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/compra/CompraService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/compra/dto/AsientoDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/compra/dto/CompraRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/compra/dto/CompraResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/config/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/domain/Evento.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/domain/Venta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/domain/VentaEstado.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/domain/VentaItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/domain/port/in/EventoUseCase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/domain/port/in/VentaUseCase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/estado/EstadoAsientoDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/estado/EstadoAsientosController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/estado/EstadoAsientosService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/event/application/service/EventoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/event/application/service/EventoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/event/infrastructure/adapter/in/scheduler/EventSyncScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/event/infrastructure/adapter/in/scheduler/EventSyncScheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/event/infrastructure/adapter/in/web/EventoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/event/infrastructure/adapter/in/web/EventoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/event/infrastructure/adapter/in/web/InternalNotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/event/infrastructure/adapter/in/web/InternalNotificationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/event/infrastructure/adapter/in/web/dto/CatedraEventDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/event/infrastructure/adapter/in/web/dto/CatedraEventDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/infrastructure/adapter/in/rest/VentaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/user/application/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/user/application/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/user/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/user/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/user/infrastructure/web/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/user/infrastructure/web/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/ventas/VentaService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/ar/edu/um/ticketflow/backend/user/infrastructure/repository/UserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/ar/edu/um/ticketflow/backend/user/infrastructure/repository/UserRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/ar/edu/um/ticketflow/proxy/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/ar/edu/um/ticketflow/proxy/kafka/EventosConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/ar/edu/um/ticketflow/proxy/kafka/KafkaConsumerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/ar/edu/um/ticketflow/proxy/redis/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/src/main/java/ar/edu/um/ticketflow/proxy/redis/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/ar/edu/um/ticketflow/proxy/security/ProxyInternalAuthInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/ar/edu/um/ticketflow/proxy/service/RedisSeatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/src/main/java/ar/edu/um/ticketflow/proxy/service/RedisSeatService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/ar/edu/um/ticketflow/proxy/web/ProxyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/src/main/java/ar/edu/um/ticketflow/proxy/web/ProxyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/src/main/resources/application-dev.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/src/main/resources/application-local.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/src/main/resources/application-prod.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/src/main/resources/application.yml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="372" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -27,29 +81,60 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feature/issue-3-spring-profiles",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/bruno/Escritorio/Progrmacion2/TpFinal/programacion-2-2025-trabajo-final-Brunopiastre",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;changes-fixes&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/bruno/Descargas/TicketFlowMobile&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecapSpentCounter">
+    <option name="endsOfQuotaMs" value="1769108414524" />
+    <option name="spentUsd" value="0.09020135" />
+  </component>
+  <component name="RecapUselessUpdatesCounter">
+    <option name="suspendCountdown" value="0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
+        <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.138" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.29346.138" />
       </set>
     </attachedChunks>
   </component>
@@ -62,6 +147,19 @@
       <updated>1762983002747</updated>
       <workItem from="1762983004118" duration="524000" />
       <workItem from="1762984831898" duration="2860000" />
+      <workItem from="1766501420516" duration="702000" />
+      <workItem from="1766502703753" duration="1714000" />
+      <workItem from="1766505181705" duration="1241000" />
+      <workItem from="1766509192374" duration="2752000" />
+      <workItem from="1766512075410" duration="2781000" />
+      <workItem from="1766524516713" duration="263000" />
+      <workItem from="1766525320686" duration="1371000" />
+      <workItem from="1766527259789" duration="847000" />
+      <workItem from="1766528412716" duration="1060000" />
+      <workItem from="1766529622703" duration="4222000" />
+      <workItem from="1766534123262" duration="804000" />
+      <workItem from="1766538990961" duration="2568000" />
+      <workItem from="1766541767898" duration="1086000" />
     </task>
     <servers />
   </component>

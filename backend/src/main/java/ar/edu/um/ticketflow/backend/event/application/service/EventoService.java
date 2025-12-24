@@ -1,14 +1,14 @@
 package ar.edu.um.ticketflow.backend.event.application.service;
 
-import ar.edu.um.ticketflow.backend.domain.Evento;
 import ar.edu.um.ticketflow.backend.event.infrastructure.adapter.out.jpa.entity.EventEntity;
 import ar.edu.um.ticketflow.backend.event.infrastructure.adapter.out.jpa.repository.EventoRepository;
+import ar.edu.um.ticketflow.backend.event.infrastructure.adapter.out.web.dto.SeatDto;
+import ar.edu.um.ticketflow.backend.event.infrastructure.adapter.in.web.dto.CatedraEventDto; // IMPORTANTE
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class EventoService {
@@ -19,70 +19,49 @@ public class EventoService {
     this.eventoRepository = eventoRepository;
   }
 
-  // LISTAR: Convierte de Entity (BD) a Domain (Java)
-  @Transactional(readOnly = true)
-  public List<Evento> listarTodo() {
-    return eventoRepository.findAll().stream()
-      .map(this::mapToDomain)
-      .collect(Collectors.toList());
+  public List<EventEntity> getAllEvents() {
+    return eventoRepository.findAll();
   }
 
-  // CREAR: Convierte de Domain (Java) a Entity (BD)
-  @Transactional
-  public Evento crear(Evento evento) {
-    EventEntity entity = mapToEntity(evento);
-    EventEntity guardado = eventoRepository.save(entity);
-    return mapToDomain(guardado);
+  public EventEntity createEvent(EventEntity event) {
+    return eventoRepository.save(event);
   }
 
-  // BUSCAR: Convierte el Optional
-  @Transactional(readOnly = true)
-  public Optional<Evento> buscarPorId(Long id) {
-    return eventoRepository.findById(id)
-      .map(this::mapToDomain);
+  public Optional<EventEntity> getEventById(Long id) {
+    return eventoRepository.findById(id);
   }
 
-  @Transactional
-  public Evento actualizar(Long id, Evento evento) {
-    return eventoRepository.findById(id)
-      .map(entity -> {
-        entity.setName(evento.getNombre());
-        entity.setDescription(evento.getDescripcion());
-        entity.setPrice(evento.getPrecio());
-        entity.setStartDate(evento.getFecha());
-        // Agrega más campos si tu Evento los tiene
-        return eventoRepository.save(entity);
-      })
-      .map(this::mapToDomain)
-      .orElseThrow(() -> new RuntimeException("Evento no encontrado"));
+  public List<SeatDto> getSeatsForEvent(Long eventId) {
+    EventEntity event = eventoRepository.findById(eventId)
+      .orElseThrow(() -> new RuntimeException("Evento no encontrado con ID: " + eventId));
+
+    List<SeatDto> seats = new ArrayList<>();
+    for (int fila = 1; fila <= event.getRowsCount(); fila++) {
+      double precioFila = event.getBasePrice() * Math.pow(1.05, fila - 1);
+      for (int columna = 1; columna <= event.getColumnsCount(); columna++) {
+        seats.add(new SeatDto(fila, columna, precioFila, true));
+      }
+    }
+    return seats; // El return va acá
   }
 
-  @Transactional
-  public void eliminar(Long id) {
-    eventoRepository.deleteById(id);
-  }
+  // ESTE MÉTODO VA AFUERA DEL ANTERIOR
+  public void actualizarOcrearEvento(CatedraEventDto dto) {
+    EventEntity evento = eventoRepository.findById(dto.getId()).orElse(new EventEntity());
 
-  // --- MÉTODOS DE CONVERSIÓN (MAPPERS) ---
+    evento.setId(dto.getId());
+    evento.setNombre(dto.getNombre());
+    evento.setDescripcion(dto.getDescripcion());
+    evento.setFecha(dto.getFecha());
+    evento.setBasePrice(dto.getPrecio());
+    evento.setCapacity(dto.getCapacidad());
 
-  private Evento mapToDomain(EventEntity entity) {
-    Evento evento = new Evento();
-    evento.setId(entity.getId());
-    evento.setNombre(entity.getName());
-    evento.setDescripcion(entity.getDescription());
-    evento.setPrecio(entity.getPrice());
-    evento.setFecha(entity.getStartDate());
-    // evento.setUbicacion(entity.getLocation()); // Si Evento tiene ubicación
-    return evento;
-  }
+    if (evento.getRowsCount() == 0) {
+      evento.setRowsCount(10);
+      evento.setColumnsCount(10);
+    }
 
-  private EventEntity mapToEntity(Evento evento) {
-    return EventEntity.builder()
-      .id(evento.getId())
-      .name(evento.getNombre())
-      .description(evento.getDescripcion())
-      .price(evento.getPrecio())
-      .startDate(evento.getFecha())
-      // .location(evento.getUbicacion())
-      .build();
+    eventoRepository.save(evento);
+    System.out.println("✅ Evento sincronizado: " + evento.getNombre());
   }
 }
