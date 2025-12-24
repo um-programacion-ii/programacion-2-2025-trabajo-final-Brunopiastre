@@ -3,7 +3,7 @@ package ar.edu.um.ticketflow.backend.event.application.service;
 import ar.edu.um.ticketflow.backend.event.infrastructure.adapter.out.jpa.entity.EventEntity;
 import ar.edu.um.ticketflow.backend.event.infrastructure.adapter.out.jpa.repository.EventoRepository;
 import ar.edu.um.ticketflow.backend.event.infrastructure.adapter.out.web.dto.SeatDto;
-import ar.edu.um.ticketflow.backend.event.infrastructure.adapter.in.web.dto.CatedraEventDto; // IMPORTANTE
+import ar.edu.um.ticketflow.backend.event.infrastructure.adapter.out.web.dto.CatedraEventDto; // IMPORTANTE
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -50,16 +50,17 @@ public class EventoService {
     EventEntity evento = eventoRepository.findById(dto.getId()).orElse(new EventEntity());
 
     evento.setId(dto.getId());
-    evento.setNombre(dto.getNombre());
+    evento.setNombre(dto.getTitulo());
     evento.setDescripcion(dto.getDescripcion());
+    // Guardamos la fecha como String (según entidad actual)
     evento.setFecha(dto.getFecha());
-    evento.setBasePrice(dto.getPrecio());
-    evento.setCapacity(dto.getCapacidad());
+    evento.setBasePrice(dto.getPrecioEntrada());
 
-    if (evento.getRowsCount() == 0) {
-      evento.setRowsCount(10);
-      evento.setColumnsCount(10);
-    }
+    Integer filas = dto.getFilaAsientos() != null ? dto.getFilaAsientos() : 10;
+    Integer columnas = dto.getColumnAsientos() != null ? dto.getColumnAsientos() : 10;
+    evento.setRowsCount(filas);
+    evento.setColumnsCount(columnas);
+    evento.setCapacity(filas * columnas);
 
     eventoRepository.save(evento);
     System.out.println("✅ Evento sincronizado: " + evento.getNombre());

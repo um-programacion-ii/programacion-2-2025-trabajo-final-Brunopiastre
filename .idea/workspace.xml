@@ -6,53 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="6294b786-43c6-4f44-9617-f822b188d454" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/BackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/BackendApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/application/usecase/EventoUseCaseService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/application/usecase/VentaUseCaseService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/asientos/AsientoBloqueado.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/asientos/BloqueoAsientosService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/auth/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/auth/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/compra/CompraController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/compra/CompraService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/compra/dto/AsientoDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/compra/dto/CompraRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/compra/dto/CompraResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/config/RedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/domain/Evento.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/domain/Venta.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/domain/VentaEstado.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/domain/VentaItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/domain/port/in/EventoUseCase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/domain/port/in/VentaUseCase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/estado/EstadoAsientoDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/estado/EstadoAsientosController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/estado/EstadoAsientosService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/common/kafka/KafkaProducerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/common/kafka/KafkaProducerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/event/application/service/EventoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/event/application/service/EventoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/event/infrastructure/adapter/in/scheduler/EventSyncScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/event/infrastructure/adapter/in/scheduler/EventSyncScheduler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/event/infrastructure/adapter/in/web/EventoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/event/infrastructure/adapter/in/web/EventoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/event/infrastructure/adapter/in/web/InternalNotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/event/infrastructure/adapter/in/web/InternalNotificationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/event/infrastructure/adapter/in/web/dto/CatedraEventDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/event/infrastructure/adapter/in/web/dto/CatedraEventDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/infrastructure/adapter/in/rest/VentaController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/user/application/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/user/application/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/user/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/user/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/user/infrastructure/web/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/user/infrastructure/web/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ar/edu/um/ticketflow/backend/ventas/VentaService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/ar/edu/um/ticketflow/backend/user/infrastructure/repository/UserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/ar/edu/um/ticketflow/backend/user/infrastructure/repository/UserRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/ar/edu/um/ticketflow/proxy/config/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/ar/edu/um/ticketflow/proxy/kafka/EventosConsumer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/ar/edu/um/ticketflow/proxy/kafka/KafkaConsumerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/ar/edu/um/ticketflow/proxy/redis/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/src/main/java/ar/edu/um/ticketflow/proxy/redis/RedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/ar/edu/um/ticketflow/proxy/security/ProxyInternalAuthInterceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/ar/edu/um/ticketflow/proxy/service/RedisSeatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/src/main/java/ar/edu/um/ticketflow/proxy/service/RedisSeatService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/ar/edu/um/ticketflow/proxy/web/ProxyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/src/main/java/ar/edu/um/ticketflow/proxy/web/ProxyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/src/main/resources/application-dev.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/src/main/resources/application-local.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/src/main/resources/application-prod.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/ar/edu/um/ticketflow/proxy/kafka/EventConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/src/main/java/ar/edu/um/ticketflow/proxy/kafka/EventConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +23,7 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="372" />
+    <option name="cachedIndexableFilesCount" value="374" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -160,6 +120,10 @@
       <workItem from="1766534123262" duration="804000" />
       <workItem from="1766538990961" duration="2568000" />
       <workItem from="1766541767898" duration="1086000" />
+      <workItem from="1766593889515" duration="3257000" />
+      <workItem from="1766601342216" duration="1132000" />
+      <workItem from="1766603107753" duration="1483000" />
+      <workItem from="1766605917451" duration="1475000" />
     </task>
     <servers />
   </component>
