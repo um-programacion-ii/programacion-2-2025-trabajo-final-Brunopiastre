@@ -1,0 +1,24 @@
+2025-12-28 11:59:12,436 [   1263]   WARN - org.apache.lucene.internal.vectorization.VectorizationProvider - Java vector incubator module is not readable. For optimal vector performance, pass '--add-modules jdk.incubator.vector' to enable Vector API.
+2025-12-28 11:59:13,009 [   1836]   WARN - #com.android.studio.ml.enterprise.login.StudioModelsOnboardingController$Companion - Auth state changed from AuthState.Initializing(isAuthorized=false) to AuthState.LoggedOut(isAuthorized=false)
+2025-12-28 11:59:16,395 [   5222]   WARN - #c.i.u.j.JBCefApp - JCefAppConfig.class is not from a JBR module, url: jar:file:/opt/android-studio/lib/lib.jar!/com/jetbrains/cef/JCefAppConfig.class (Use JBR bundled with the IDE)
+2025-12-28 11:59:17,514 [   6341]   WARN - #com.android.tools.ndk.HotfixForOCInitialTablesBuildingActivity - Overriding OCInitialTablesBuildingActivity with HotfixForOCInitialTablesBuildingActivity
+2025-12-28 11:59:42,178 [  31005]   WARN - #c.i.c.ComponentStoreImpl - Scheme file "Project_Default.xml" is not loaded because defines duplicated name "Project Default"
+2025-12-28 12:41:12,674 [2521501]   WARN - #com.android.tools.idea.rendering.ConfigurationMatcher - 'default' is not a best match for any device/locale combination for file:///home/alma/0prog2/programacion-2-2025-trabajo-final-valencora/mobile/app/src/main/AndroidManifest.xml.
+Displaying it with
+  , , , , Left To Right, sw412dp, w412dp, h732dp, Normal Screen, Short screen aspect ratio, Not Round screen, , , Portrait Orientation, Normal, Day time, 420dpi, Finger-based touchscreen, Soft keyboard, No keyboard, Hidden navigation, No navigation, Screen resolution 1920x1080, API Level 36
+which is compatible, but will actually be displayed with another more specific version of the layout.
+2025-12-28 12:55:11,592 [3360419]   WARN - Emulator: Pixel 8 Pro - Your GPU drivers may have a bug. Switching to software rendering.
+2025-12-28 12:55:11,823 [3360650]   WARN - Emulator: Pixel 8 Pro - Setting read-only feature 'GLAsyncSwap' to '0'
+2025-12-28 12:55:11,896 [3360723]   WARN - Emulator: Pixel 8 Pro - *** Basic token auth should only be used by android-studio ***
+2025-12-28 12:55:12,094 [3360921]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 12:55:12,095 [3360922]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 12:55:12,095 [3360922]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 12:55:12,095 [3360922]   WARN - Emulator: Pixel 8 Pro - Unknown XR viewport mode requested: 0, ignored.
+2025-12-28 12:55:12,095 [3360922]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 12:55:12,095 [3360922]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 12:55:12,095 [3360922]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 12:55:12,095 [3360922]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 12:55:12,095 [3360922]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 12:55:14,111 [3362938]   WARN - #com.android.ddmlib - Failed to start Emulator console for 5554
+2025-12-28 13:22:40,242 [5009069]   WARN - o.j.p.g.i.d.GradleDaemonServices - Unable to send daemon message for Gradle 8.13
+2025-12-28 13:22:40,242 [5009069]   WARN - o.j.p.g.i.d.GradleDaemonServices - org.gradle.api.tasks.util.internal.DefaultPatternSetFactory
