@@ -1,7 +1,0 @@
-logging:
-  level:
-    root: DEBUG
-    com.um.eventosproxy: DEBUG
-    org.springframework.kafka: DEBUG
-    org.springframework.data.redis: DEBUG
-
